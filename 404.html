@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            color: #e0e0e0;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: flicker 4s infinite;
+        }
+
+        .description {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .youtube-link {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #e0e0e0;
+            text-decoration: none;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .youtube-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .outro {
+            font-size: 1.5em;
+            color: #ff6b6b;
+            animation: pulse 2s infinite;
+        }
+
+        .rain {
+            position: absolute;
+            width: 2px;
+            height: 100vh;
+            background: linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+            animation: rain-fall linear infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes rain-fall {
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* Create multiple rain drops with different positions and speeds */
+        .rain:nth-child(1) { left: 10%; animation-duration: 1.5s; }
+        .rain:nth-child(2) { left: 25%; animation-duration: 1.8s; }
+        .rain:nth-child(3) { left: 40%; animation-duration: 1.6s; }
+        .rain:nth-child(4) { left: 55%; animation-duration: 1.4s; }
+        .rain:nth-child(5) { left: 70%; animation-duration: 1.7s; }
+        .rain:nth-child(6) { left: 85%; animation-duration: 1.3s; }
+        .rain:nth-child(7) { left: 95%; animation-duration: 1.9s; }
+
+        .static-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVfG/JAAAACHRSTlMABgwQFR4rMWcIj2QAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAySURBVDjLY2AYBaNg8ACDQ4PFQIB/Q0PDQMBCBwYGhkEJGBgYBiVgYGAYlICBYYQDAKxWCxGnd0SetAAAAABJRU5ErkJggg==');
+            opacity: 0.03;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Rain animation elements -->
+    <div class="rain"></div>
+    <div class="rain"></div>
+    <div class="rain"></div>
+    <div class="rain"></div>
+    <div class="rain"></div>
+    <div class="rain"></div>
+    <div class="rain"></div>
+
+    <!-- Static overlay for retro effect -->
+    <div class="static-overlay"></div>
+
+    <div class="container">
+        <h1>MOTOVISION CHRONICLES</h1>
+        <p class="description">Cruising through stories, one ride at a time.<br>New content incoming...</p>
+        <a href="https://www.youtube.com/@MotoVisionChronicles" class="youtube-link" target="_blank">Visit Our YouTube Channel</a>
+        <p class="outro">Much Love ♥️</p>
+    </div>
+</body>
+</html>
